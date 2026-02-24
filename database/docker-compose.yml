@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: hostel_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ishan
+      POSTGRES_PASSWORD: ishan@2026
+      POSTGRES_DB: hostel_management
+    ports:
+      - '5433:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
